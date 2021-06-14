@@ -6,12 +6,12 @@
 /*   By: lincerpi <lincerpi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 17:07:18 by lincerpi          #+#    #+#             */
-/*   Updated: 2021/06/14 11:05:22 by lincerpi         ###   ########.fr       */
+/*   Updated: 2021/06/14 11:12:50 by lincerpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-# define FIXED_H
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
 #include <iostream>
 

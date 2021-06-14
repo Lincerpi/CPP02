@@ -6,7 +6,7 @@
 /*   By: lincerpi <lincerpi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 17:07:18 by lincerpi          #+#    #+#             */
-/*   Updated: 2021/06/13 17:12:04 by lincerpi         ###   ########.fr       */
+/*   Updated: 2021/06/14 11:05:22 by lincerpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ class Fixed;
 
 class Fixed {
 		int _fixedPointValue;
-		static int const _fractionalBits;
+		static int const _fractionalBits = 8;
 
 	public:
 		Fixed();
 		~Fixed();
-		Fixed(Fixed &copy);
-		//An assignation operator overload
+		Fixed(const Fixed& copy);
+		void operator = (const Fixed &op);
 		int	getRawBits() const;
 		void	setRawBits(int const raw);
 };

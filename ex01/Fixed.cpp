@@ -6,7 +6,7 @@
 /*   By: lincerpi <lincerpi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 17:07:15 by lincerpi          #+#    #+#             */
-/*   Updated: 2021/06/14 13:13:46 by lincerpi         ###   ########.fr       */
+/*   Updated: 2021/06/14 13:17:56 by lincerpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,18 @@ Fixed::Fixed()
 { 
 	std::cout << "Default constructor called" << std::endl; 
 	this->_fixedPointValue = 0;
+}
+
+Fixed::Fixed(const int value_int)
+{
+	std::cout << "Int constructor called" << std::endl;
+	this->_fixedPointValue = value_int << this->_fractionalBits;
+}
+
+Fixed::Fixed(const float value_float)
+{
+	std::cout << "Float constructor called" << std::endl;
+	this->_fixedPointValue = (int)(roundf(value_float * (1 << this->_fractionalBits)));
 }
 
 Fixed::~Fixed()
@@ -43,3 +55,15 @@ int	Fixed::getRawBits() const
 
 void	Fixed::setRawBits(int const raw)
 {	this->_fixedPointValue = raw; }
+
+float	Fixed::toFloat() const
+{	return ((float)this->_fixedPointValue / (float)(1 << this->_fractionalBits)); }
+
+int		Fixed::toInt() const
+{	return ((int)this->_fixedPointValue >> this->_fractionalBits); }
+
+std::ostream &operator<<(std::ostream &out, const Fixed &fixe)
+{
+    out << fixe.toFloat();
+    return (out);
+}

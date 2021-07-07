@@ -6,7 +6,7 @@
 /*   By: lincerpi <lincerpi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 17:07:15 by lincerpi          #+#    #+#             */
-/*   Updated: 2021/07/07 18:18:14 by lincerpi         ###   ########.fr       */
+/*   Updated: 2021/07/07 19:06:48 by lincerpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,17 +133,17 @@ Fixed	Fixed::operator --()
 	return (*this);
 }
 
-Fixed & Fixed::min(Fixed &u, Fixed &v)
-{ return (u < v ? u : v); }
+Fixed & Fixed::min(Fixed &x, Fixed &y)
+{ return (x < y ? x : y); }
 
-const Fixed & Fixed::min(const Fixed &u, const Fixed &v)
-{ return (u < v ? u : v); }
+const Fixed & Fixed::min(const Fixed &x, const Fixed &y)
+{ return (x < y ? x : y); }
 
-Fixed & Fixed::max(Fixed &u, Fixed &v)
-{ return (u > v ? u : v); }
+Fixed & Fixed::max(Fixed &x, Fixed &y)
+{ return (x > y ? x : y); }
 
-const Fixed & Fixed::max(const Fixed &u, const Fixed &v)
-{ return (u > v ? u : v); }
+const Fixed & Fixed::max(const Fixed &x, const Fixed &y)
+{ return (x > y ? x : y); }
 
 int	Fixed::getRawBits() const
 {	
